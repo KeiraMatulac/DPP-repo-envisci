@@ -38,29 +38,28 @@ export function ProductDetail() {
   }
 
   // -----------------------------
-  // SAFE NUMERIC CONVERSION
+  // SAFE DATA PARSING
   // -----------------------------
-  const carbonFootprint =
-    parseFloat(product.environmental.carbonFootprint as any) || 0;
-
-  const recyclability = product.circularity.recyclability || 0;
-  const repairability = product.circularity.repairability || 0;
+  const carbonFootprint = Number(product.environmental.carbonFootprint) || 0;
+  const recyclability = Number(product.circularity.recyclability) || 0;
+  const repairability = Number(product.circularity.repairability) || 0;
 
   // -----------------------------
-  // NORMALIZED CARBON SCORE (0–100)
+  // CARBON NORMALIZATION (FIXED)
   // -----------------------------
-  const maxCarbon = 20; // adjust based on dataset
+  const MAX_CARBON = 25;
 
-  const carbonScore = Math.max(
-    0,
-    Math.min(
-      100,
-      Math.round(((maxCarbon - carbonFootprint) / maxCarbon) * 100)
-    )
+  const clampedCarbon = Math.min(
+    Math.max(carbonFootprint, 0),
+    MAX_CARBON
+  );
+
+  const carbonScore = Math.round(
+    ((MAX_CARBON - clampedCarbon) / MAX_CARBON) * 100
   );
 
   // -----------------------------
-  // SUSTAINABILITY METRICS
+  // SUSTAINABILITY DATA
   // -----------------------------
   const sustainabilityData = [
     {
@@ -70,7 +69,7 @@ export function ProductDetail() {
     },
     {
       name: 'Materials',
-      value: recyclability,
+      value: Math.min(100, Math.max(0, recyclability)),
       fill: '#66bb6a'
     },
     {
@@ -80,13 +79,13 @@ export function ProductDetail() {
     },
     {
       name: 'Repairability',
-      value: repairability,
+      value: Math.min(100, Math.max(0, repairability)),
       fill: '#a5d6a7'
     }
   ];
 
   // -----------------------------
-  // OVERALL SCORE (NO HARDCODE)
+  // OVERALL SCORE (DYNAMIC)
   // -----------------------------
   const overallScore = Math.round(
     (carbonScore + recyclability + repairability) / 3
@@ -127,7 +126,7 @@ export function ProductDetail() {
             </div>
           </div>
 
-          {/* PRODUCT INFO */}
+          {/* INFO */}
           <div>
             <div className="flex justify-between items-start mb-6">
               <div>
@@ -143,12 +142,11 @@ export function ProductDetail() {
               </div>
             </div>
 
-            {/* SUSTAINABILITY CARD */}
+            {/* SUSTAINABILITY */}
             <div className="bg-card border rounded-2xl p-6">
 
               <h3 className="text-lg mb-4 flex items-center gap-2">
-                <span>📊</span>
-                Sustainability Score
+                📊 Sustainability Score
               </h3>
 
               {/* OVERALL SCORE */}
@@ -180,7 +178,7 @@ export function ProductDetail() {
                 </div>
               </div>
 
-              {/* BAR CHART */}
+              {/* CHART */}
               <ResponsiveContainer width="100%" height={140}>
                 <BarChart data={sustainabilityData} layout="vertical">
                   <XAxis type="number" domain={[0, 100]} hide />
@@ -188,6 +186,7 @@ export function ProductDetail() {
                   <Bar dataKey="value" radius={[0, 10, 10, 0]} />
                 </BarChart>
               </ResponsiveContainer>
+
             </div>
           </div>
         </div>
@@ -197,33 +196,26 @@ export function ProductDetail() {
 
           <div className="bg-card border rounded-2xl p-6">
             <h3 className="mb-4">Product Information</h3>
-
             <div className="space-y-2 text-sm">
               <div>Category: {product.category}</div>
               <div>Serial: {product.serialNumber}</div>
               <div>Weight: {product.specifications.weight}</div>
-              <div>
-                Materials: {product.materials.primary.join(', ')}
-              </div>
+              <div>Materials: {product.materials.primary.join(', ')}</div>
             </div>
           </div>
 
           <div className="bg-card border rounded-2xl p-6">
             <h3 className="mb-4">Environmental Impact</h3>
-
             <p className="text-sm text-muted-foreground">
               {product.environmental.ecoDesign}
             </p>
 
             <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
-              <div>
-                Carbon: {carbonFootprint}
-              </div>
-              <div>
-                Recyclable: {recyclability}%
-              </div>
+              <div>Carbon: {carbonFootprint}</div>
+              <div>Recyclable: {recyclability}%</div>
             </div>
           </div>
+
         </div>
 
       </div>
