@@ -19,11 +19,34 @@ export function ProductDetail() {
     );
   }
 
+  const maxCarbon = 10; // baseline CO2 value for normalization (adjust if needed)
+
+  const carbonScore = Math.max(
+    0,
+    Math.round(((maxCarbon - product.environmental.carbonFootprint) / maxCarbon) * 100)
+  );
+  
   const sustainabilityData = [
-    { name: 'Carbon Impact', value: Math.round((100 - parseFloat(product.environmental.carbonFootprint)) * 10), fill: '#2e7d32' },
-    { name: 'Materials', value: product.circularity.recyclability, fill: '#66bb6a' },
-    { name: 'Circularity', value: (product.circularity.recyclability + product.circularity.repairability) / 2, fill: '#81c784' },
-    { name: 'Repairability', value: product.circularity.repairability, fill: '#a5d6a7' },
+    {
+      name: 'Carbon Impact',
+      value: carbonScore,
+      fill: '#2e7d32'
+    },
+    {
+      name: 'Materials',
+      value: product.circularity.recyclability,
+      fill: '#66bb6a'
+    },
+    {
+      name: 'Circularity',
+      value: (product.circularity.recyclability + product.circularity.repairability) / 2,
+      fill: '#81c784'
+    },
+    {
+      name: 'Repairability',
+      value: product.circularity.repairability,
+      fill: '#a5d6a7'
+    },
   ];
 
   const lifecycleStages = [
