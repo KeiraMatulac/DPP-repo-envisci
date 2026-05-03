@@ -20,7 +20,7 @@ export function ProductDetail() {
   }
 
   const sustainabilityData = [
-    { name: 'Carbon Impact', value: Math.round((100 - parseFloat(product.environmental.carbonFootprint)) * 10), fill: '#2e7d32' },
+    { name: 'Carbon Impact', value: Math.round((100 - parseFloat(product.environmental.carbonFootprint))), fill: '#2e7d32' },
     { name: 'Materials', value: product.circularity.recyclability, fill: '#66bb6a' },
     { name: 'Circularity', value: (product.circularity.recyclability + product.circularity.repairability) / 2, fill: '#81c784' },
     { name: 'Repairability', value: product.circularity.repairability, fill: '#a5d6a7' },
