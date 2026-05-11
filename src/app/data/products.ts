@@ -690,4 +690,175 @@ export const products: Product[] = [
       lifecycleTracking: ['Ownership history', 'Repair records', 'Recycling status'],
     },
   },
+  {
+    id: '9',
+    name: 'Sony DualShock 3 Wireless Controller',
+    modelId: 'SONY-DS3-2009-00231',
+    category: 'Consumer Electronic Device',
+    image: '/img-srcs/ps4-controller.jpg',
+    score: 88,
+    grade: 'A',
+    tags: ['Recyclable', 'Repairable', 'Low Carbon'],
+    description: 'Wireless gaming controller designed for PlayStation gaming consoles with Bluetooth connectivity, dual analog sticks, vibration feedback, and rechargeable battery support',
+
+    modelName: 'Sony DualShock 3 Wireless Controller',
+    serialNumber: 'SNY-483920880155',
+    manufacturingDate: 'August 12, 2009',
+    batchNumber: 'JP-CN-090812-DS3',
+    manufacturingLocation: 'China',
+
+    specifications: {
+      connectivity: 'Bluetooth Wireless / Mini-USB Wired Connection',
+      batteryLife: 'Rechargeable Lithium-Ion Battery',
+      chargingPort: 'Mini-USB',
+      weight: '192g',
+    },
+
+    materials: {
+      primary: [
+        'ABS Plastic Housing',
+        'Rubberized Analog Stick Covers',
+        'Silicone Conductive Button Pads',
+        'Copper Internal Wiring',
+        'Rechargeable Lithium-Ion Battery Pack',
+      ],
+      hazardousCompliance: 'RoHS Compliant, Lead-free soldering process',
+      packaging: 'Recyclable cardboard packaging, minimal plastic insert materials',
+    },
+
+    origin: {
+      country: 'China',
+      facility: 'Sony Computer Entertainment Inc.',
+      sourcing: [
+        'Electronic components sourced from certified suppliers',
+        'Plastic materials sourced from industrial-grade recyclable polymers',
+      ],
+      laborStandards: 'Manufactured under international workplace and ethical sourcing standards',
+    },
+
+    environmental: {
+      carbonFootprint: '1.8 kg CO₂e per unit',
+      energyConsumption: 'Low-power Bluetooth technology for extended battery efficiency',
+      ecoDesign: 'Replaceable battery and modular internal components',
+      packagingReduction: 'Reduced plastic packaging compared to previous controller packaging designs',
+    },
+
+    circularity: {
+      recyclability: 90,
+      repairability: 80,
+      replaceableParts: ['Analog stick caps', 'Internal battery', 'Button membranes', 'USB charging port'],
+      takeBackProgram: 'Eligible through authorized Sony e-waste and electronics recycling partners',
+      refurbishment: true,
+    },
+
+    compliance: {
+      certifications: ['FCC', 'CE', 'RoHS', 'WEEE'],
+      safetyStandards: 'IEC Electronic Device Safety Standards compliant',
+      qualityAssurance: 'ISO-certified manufacturing process',
+    },
+
+    disposal: {
+      guidelines: [
+        'Do not dispose with household waste',
+        'Return to certified e-waste recycling facilities',
+        'Battery should be removed and recycled separately',
+        'Participate in authorized electronics recycling programs',
+        'Follow local WEEE and e-waste disposal regulations',
+      ],
+    },
+
+    warranty: {
+      period: '12 Months',
+      support: 'Global Sony Support Services, Firmware Support through PlayStation system software updates',
+      activated: 'August 20, 2009',
+    },
+
+    verification: {
+      blockchainId: 'SONY-DS3-2009-00231',
+      lifecycleTracking: ['Ownership registration', 'Repair and maintenance history', 'Battery replacement records', 'Recycling and refurbishment status'],
+    },
+  },
+  {
+    id: '10',
+    name: 'Logitech MK120 Wired Keyboard and Mouse Combo',
+    modelId: 'LOG-MK120-2025-01472',
+    category: 'Consumer Electronic Device',
+    image: '/img-srcs/logitech-keyboard.webp',
+    score: 76,
+    grade: 'B',
+    tags: ['Recyclable', 'Repairable', 'Durable'],
+    description: 'Durable full-size wired keyboard and optical mouse combo designed for office, educational, and everyday computing use',
+
+    modelName: 'Logitech MK120 Wired Desktop Combo',
+    serialNumber: 'MK120-552981-PH',
+    manufacturingDate: 'January 18, 2025',
+    batchNumber: 'CN-SZ-250118-MK',
+    manufacturingLocation: 'Suzhou, China',
+
+    specifications: {
+      connectivity: 'Wired USB-A',
+      weight: '0.82kg',
+      waterResistance: 'Spill-resistant keyboard design',
+    },
+
+    materials: {
+      primary: [
+        'ABS Plastic Housing',
+        'Silicone Membrane Keys',
+        'Electronic PCB Components',
+        'Copper Wiring',
+        'Rubber Mouse Grip Components',
+      ],
+      hazardousCompliance: 'RoHS compliant',
+      packaging: 'Recyclable cardboard and paper-based inserts',
+    },
+
+    origin: {
+      country: 'China',
+      facility: 'Logitech Certified Manufacturing Facility',
+      sourcing: ['Components sourced from audited suppliers'],
+      laborStandards: 'Compliant with international labor and workplace safety standards',
+    },
+
+    environmental: {
+      carbonFootprint: '4.1 kg CO₂e per unit',
+      energyConsumption: 'Low-power USB operation',
+      ecoDesign: 'Durable long-life membrane switches reduce replacement frequency',
+      packagingReduction: '30% reduced single-use plastic packaging',
+    },
+
+    circularity: {
+      recyclability: 78,
+      repairability: 60,
+      replaceableParts: ['USB cable', 'Keycaps', 'Optical sensor module', 'Mouse switches'],
+      takeBackProgram: 'Available through Logitech recycling initiatives',
+      refurbishment: true,
+    },
+
+    compliance: {
+      certifications: ['CE', 'FCC', 'RoHS', 'WEEE'],
+      safetyStandards: 'IEC 62368-1 compliant',
+      qualityAssurance: 'ISO 9001 certified manufacturing',
+    },
+
+    disposal: {
+      guidelines: [
+        'Do not dispose with regular household waste',
+        'Return to certified e-waste recycling facilities',
+        'Separate plastic and electronic components when possible',
+        'Participate in manufacturer recycling and take-back programs',
+      ],
+    },
+
+    warranty: {
+      period: '36 Months',
+      support: 'Global Logitech Support Services',
+      activated: 'January 25, 2025',
+    },
+
+    verification: {
+      blockchainId: 'LOG-MK120-2025-01472',
+      lifecycleTracking: ['Ownership history', 'Repair and maintenance records', 'Refurbishment status', 'Recycling and disposal tracking'],
+    },
+  },
 ];
