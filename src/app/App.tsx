@@ -37,7 +37,7 @@ function CategoryPage() {
             {
               name: 'Consumer Electronic Device',
               icon: '',
-              count: 3,
+              count: 5,
               desc: 'Smartphones, wearables, headphones, and electronic devices'
             },
             {
